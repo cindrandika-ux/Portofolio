@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Juslianto Suradi — Creative Developer & 3D Designer</title>
+<meta name="description" content="Portofolio 3D interaktif — Creative Developer, WebGL, Three.js, UI/UX." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+
+<div id="preloader"><div class="loader-box"><div class="loader-logo">JS<span>.</span></div><div class="loader-bar"><div></div></div><p>Memuat pengalaman 3D…</p></div></div>
+<div class="scroll-progress"><span id="scrollProgress"></span></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<canvas id="webgl"></canvas>
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+
+<header class="nav" id="navbar">
+  <a href="#hero" class="brand" data-hover>JS<span>.</span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#tentang" data-hover>Tentang</a>
+    <a href="#skill" data-hover>Skill</a>
+    <a href="#proyek" data-hover>Proyek</a>
+    <a href="#pengalaman" data-hover>Pengalaman</a>
+    <a href="#kontak" data-hover class="btn-small">Hubungi Saya</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge reveal"><span class="pulse"></span> Tersedia untuk freelance & full-time</div>
+    <p class="hero-kicker reveal">Halo, saya</p>
+    <h1 class="hero-title reveal">JUSLIANTO<br/>SURADI<span class="accent">.</span></h1>
+    <h2 class="hero-role reveal">Saya seorang <span id="typed"></span><span class="caret">|</span></h2>
+    <p class="hero-desc reveal">Saya membangun website imersif dengan <strong>Three.js, Motion Design, HTML</strong>. Scroll untuk masuk ke dunia 3D saya — geser mouse untuk memutar objek.</p>
+    <div class="hero-cta reveal">
+      <a href="#proyek" class="btn btn-primary magnetic" data-hover>Lihat Proyek <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      <a href="#kontak" class="btn btn-ghost magnetic" data-hover>Kontak</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div><strong><span class="count" data-target="1">0</span>+</strong><small>Proyek Selesai</small></div>
+      <div><strong><span class="count" data-target="1">0</span> thn</strong><small>Pengalaman</small></div>
+      <div><strong><span class="count" data-target="3">0</span>+</strong><small>Klien Puas</small></div>
+    </div>
+  </div>
+  <div class="hero-photo tilt reveal" data-hover>
+    <div class="photo-frame">
+      <div class="photo-fallback">JS</div>
+      <img src="foto.jpg" alt="Foto Juslianto Suradi" onerror="this.remove()" />
+      <div class="photo-name"><strong>Juslianto Suradi</strong><small>📍 Nusa Tenggara Timur</small></div>
+    </div>
+    <div class="photo-badge"><span class="pulse"></span> Open to work</div>
+  </div>
+  <div class="hero-3d-hint"><div class="mouse"><div class="wheel"></div></div><span>Scroll / Gerakkan mouse — scene 3D interaktif</span></div>
+  <div class="hero-side">SCROLL-TRIGGERED STORY — 001</div>
+</section>
+
+<div class="marquee"><div class="marquee-track">
+  <span>THREE.JS ✦ WEBGL ✦ GSAP ✦ BLENDER ✦ REACT ✦ UI/UX ✦ MOTION ✦ THREE.JS ✦ WEBGL ✦ GSAP ✦ BLENDER ✦ REACT ✦ UI/UX ✦ MOTION ✦&nbsp;</span>
+  <span>THREE.JS ✦ WEBGL ✦ GSAP ✦ BLENDER ✦ REACT ✦ UI/UX ✦ MOTION ✦ THREE.JS ✦ WEBGL ✦ GSAP ✦ BLENDER ✦ REACT ✦ UI/UX ✦ MOTION ✦&nbsp;</span>
+</div></div>
+
+<!-- TENTANG -->
+<section class="section" id="tentang">
+  <p class="sec-label reveal">01 — Tentang</p>
+  <div class="grid-2">
+    <div>
+      <h2 class="sec-title reveal">Saya merancang <em>ruang digital</em> yang hidup.</h2>
+      <p class="sec-desc reveal">Creative developer berbasis di Nusa Tenggara Timur. Fokus saya: website 3D real-time, micro-interaction yang halus, dan performa yang tetap kencang. Background saya gabungan desain grafis + frontend engineering.</p>
+      <div class="about-cards">
+        <div class="a-card tilt reveal" data-hover><h3>⚡ Fokus</h3><p>Immersive landing page, product configurator 3D, WebGL storytelling.</p></div>
+        <div class="a-card tilt reveal" data-hover><h3>🎯 Prinsip</h3><p>Readable tanpa animasi, memukau dengan animasi. Aksesibel & responsif dulu.</p></div>
+      </div>
+    </div>
+    <div class="profile-card tilt reveal" data-hover>
+      <div class="profile-3d">JS</div>
+      <h3>Juslianto Suradi</h3>
+      <p class="muted">Creative Developer • Nusa Tenggara, ID</p>
+      <div class="tags"><span>Three.js</span><span>R3F</span><span>GSAP</span><span>Blender</span><span>TypeScript</span></div>
+      <div class="profile-row">
+        <a href="#kontak" class="btn btn-primary" data-hover>CV Saya</a>
+        <div class="socials">
+          <a href="#" aria-label="Github" data-hover><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 6.8 9.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.2-.4-1.3.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.4.1 2.6.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.8 1 .8 2v3c0 .3.2.6.7.5A10 10 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg></a>
+          <a href="#" aria-label="LinkedIn" data-hover><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V21H9z"/></svg></a>
+          <a href="#" aria-label="Dribbble" data-hover><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.5 2.7c3.5 4 6 8.4 7.5 18M2 12h20M21.5 7c-4.5 2-9.5 2.5-15 1"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILL -->
+<section class="section" id="skill">
+  <p class="sec-label reveal">02 — Skill</p>
+  <h2 class="sec-title reveal">Stack <em>3D & frontend.</em></h2>
+  <div class="skills-grid">
+    <div class="skill-card tilt reveal" data-hover><div class="sk-top"><span class="sk-icon">◈</span><h3>Three.js / WebGL</h3><strong>92%</strong></div><div class="bar"><i data-w="92"></i></div><p>Shaders, particles, post-processing, optimasi 60fps.</p></div>
+    <div class="skill-card tilt reveal" data-hover><div class="sk-top"><span class="sk-icon">⬢</span><h3>React / R3F</h3><strong>88%</strong></div><div class="bar"><i data-w="88"></i></div><p>React Three Fiber, drei, state 3D reaktif.</p></div>
+    <div class="skill-card tilt reveal" data-hover><div class="sk-top"><span class="sk-icon">✦</span><h3>GSAP Motion</h3><strong>90%</strong></div><div class="bar"><i data-w="90"></i></div><p>ScrollTrigger storytelling, timeline, micro-interaction.</p></div>
+    <div class="skill-card tilt reveal" data-hover><div class="sk-top"><span class="sk-icon">⬣</span><h3>Blender 3D</h3><strong>80%</strong></div><div class="bar"><i data-w="80"></i></div><p>Low-poly modeling, baking, export glTF teroptimasi.</p></div>
+    <div class="skill-card tilt reveal" data-hover><div class="sk-top"><span class="sk-icon">◆</span><h3>TypeScript</h3><strong>85%</strong></div><div class="bar"><i data-w="85"></i></div><p>Clean architecture, typed 3D systems.</p></div>
+    <div class="skill-card tilt reveal" data-hover><div class="sk-top"><span class="sk-icon">◎</span><h3>UI/UX</h3><strong>86%</strong></div><div class="bar"><i data-w="86"></i></div><p>Design system, aksesibilitas, responsive 375px→4K.</p></div>
+  </div>
+</section>
+
+<!-- PROYEK -->
+<section class="section" id="proyek">
+  <p class="sec-label reveal">03 — Proyek Pilihan</p>
+  <div class="sec-head reveal"><h2 class="sec-title">Karya <em>terbaru.</em></h2>
+    <div class="filters" role="tablist">
+      <button class="chip active" data-filter="all" data-hover>Semua</button>
+      <button class="chip" data-filter="3d" data-hover>3D / WebGL</button>
+      <button class="chip" data-filter="web" data-hover>Web App</button>
+      <button class="chip" data-filter="motion" data-hover>Motion</button>
+    </div>
+  </div>
+  <div class="projects" id="projectGrid">
+    <article class="proj tilt reveal" data-cat="3d" data-hover>
+      <div class="proj-visual p1"><span class="proj-num">01</span><div class="proj-orb"></div><span class="proj-tag">Three.js • GLSL</span></div>
+      <div class="proj-body"><h3>Nebula Configurator</h3><p>Configurator produk 3D real-time dengan 40+ varian material & AR preview. +63% konversi.</p><div class="proj-foot"><span>2026</span><a href="#" data-hover>Live Demo →</a></div></div>
+    </article>
+    <article class="proj tilt reveal" data-cat="web" data-hover>
+      <div class="proj-visual p2"><span class="proj-num">02</span><div class="proj-orb"></div><span class="proj-tag">R3F • Next.js</span></div>
+      <div class="proj-body"><h3>Arsitek Virtual Tour</h3><p>Tur properti 360° + walkthrough WebGL, loading &lt; 2 detik di 4G.</p><div class="proj-foot"><span>2025</span><a href="#" data-hover>Live Demo →</a></div></div>
+    </article>
+    <article class="proj tilt reveal" data-cat="motion" data-hover>
+      <div class="proj-visual p3"><span class="proj-num">03</span><div class="proj-orb"></div><span class="proj-tag">GSAP • Story</span></div>
+      <div class="proj-body"><h3>Ocean Storytelling</h3><p>Scroll-triggered story untuk kampanye laut — 5 chapter, climax CTA donasi.</p><div class="proj-foot"><span>2025</span><a href="#" data-hover>Live Demo →</a></div></div>
+    </article>
+    <article class="proj tilt reveal" data-cat="3d" data-hover>
+      <div class="proj-visual p4"><span class="proj-num">04</span><div class="proj-orb"></div><span class="proj-tag">Blender • glTF</span></div>
+      <div class="proj-body"><h3>Mecha Showroom</h3><p>Showroom mainan 3D dengan exploded-view & animasi rakitan interaktif.</p><div class="proj-foot"><span>2024</span><a href="#" data-hover>Live Demo →</a></div></div>
+    </article>
+    <article class="proj tilt reveal" data-cat="web" data-hover>
+      <div class="proj-visual p5"><span class="proj-num">05</span><div class="proj-orb"></div><span class="proj-tag">TS • Dashboard</span></div>
+      <div class="proj-body"><h3>Pulse Analytics</h3><p>Dashboard real-time 3D charts — 100k datapoint tanpa jank.</p><div class="proj-foot"><span>2024</span><a href="#" data-hover>Live Demo →</a></div></div>
+    </article>
+    <article class="proj tilt reveal" data-cat="motion" data-hover>
+      <div class="proj-visual p6"><span class="proj-num">06</span><div class="proj-orb"></div><span class="proj-tag">Portfolio • Award</span></div>
+      <div class="proj-body"><h3>NOIR — Fashion 3D</h3><p>Landing fashion dengan kain cloth-simulation & custom cursor magnetik.</p><div class="proj-foot"><span>2023</span><a href="#" data-hover>Live Demo →</a></div></div>
+    </article>
+  </div>
+</section>
+
+<!-- PENGALAMAN -->
+<section class="section" id="pengalaman">
+  <p class="sec-label reveal">04 — Pengalaman</p>
+  <h2 class="sec-title reveal">Perjalanan <em>saya.</em></h2>
+  <div class="timeline">
+    <div class="t-item reveal"><span class="t-dot"></span><div class="t-card"><small>2024 — Sekarang</small><h3>Senior Creative Developer • Lumina Studio</h3><p>Memimpin tim WebGL 4 orang. Mengirim 12 site 3D dengan skor Lighthouse 95+.</p></div></div>
+    <div class="t-item reveal"><span class="t-dot"></span><div class="t-card"><small>2022 — 2024</small><h3>Frontend Engineer • Tokoscale</h3><p>Membangun design system + viewer produk 3D yang dipakai 2jt user/bulan.</p></div></div>
+    <div class="t-item reveal"><span class="t-dot"></span><div class="t-card"><small>2020 — 2022</small><h3>Freelance Web Designer</h3><p>48 proyek untuk klien ID / SG / US. Spesialis landing page animasi.</p></div></div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section class="section" id="kontak">
+  <p class="sec-label reveal">05 — Kontak</p>
+  <div class="contact-box reveal">
+    <div>
+      <h2 class="sec-title">Punya ide <em>liar?</em><br/>Wujudkan dalam 3D.</h2>
+      <p class="sec-desc">Ceritakan proyekmu — saya balas &lt; 24 jam. Saat ini open untuk Q4 2026.</p>
+      <div class="contact-links">
+        <a href="mailto:cindrandika@gmail.com" data-hover>✉ cindrandika@gmail.com</a>
+        <a href="https://wa.me/6281226950858?text=Halo%20Juslianto%2C%20saya%20melihat%20portofolio%20Anda%20dan%20ingin%20berdiskusi." target="_blank" rel="noopener" data-hover>✆ 081226950858 (WhatsApp)</a>
+        <a href="#" data-hover>◷ Nusa Tenggara Timur (GMT+8)</a>
+      </div>
+    </div>
+    <form id="contactForm" novalidate>
+      <label>Nama<input required name="nama" placeholder="Nama kamu" /></label>
+      <label>Email<input required type="email" name="email" placeholder="email@domain.com" /></label>
+      <label>Pesan<textarea required name="pesan" rows="4" placeholder="Ceritakan proyek 3D impianmu…"></textarea></label>
+      <button class="btn btn-primary" type="submit" data-hover>Kirim Pesan 🚀</button>
+      <p class="form-ok" id="formOk">✓ Pesan terkirim! Saya hubungi segera.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Juslianto Suradi — Dibangun dengan Three.js & cinta.</p>
+  <button id="toTop" aria-label="Ke atas" data-hover>↑</button>
+</footer>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
